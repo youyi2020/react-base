@@ -1,9 +1,11 @@
 import React from 'react'
 import {HashRouter as Router,Route,Switch,Redirect} from 'react-router-dom'
-import Layout from './../layout'
-import HomePage from './../pages/home'
+import PrivateRoute from './private.js'
+import Layout from './../layout/index.js'
+import HomePage from './../pages/home/index.js'
+import LoginPage from './../pages/login/index.js'
 
-export default class IRouter extends React.Component{
+class IRouter extends React.Component{
     render(){
         return(
             <Router>
@@ -11,8 +13,10 @@ export default class IRouter extends React.Component{
                     <Route path='/'>
                         <Layout>
                             <Switch>
-                                <Route exact path="/home" component={HomePage}/>
-                                <Redirect to="/home"/>
+                                {/* <Route exact path="/home" component={HomePage}/> */}
+                                <Route exact path="/login" component={LoginPage}/>
+                                <PrivateRoute path="/home" component={HomePage} />
+                                <Redirect to="/login"/>
                             </Switch>
                         </Layout>
                     </Route>
@@ -21,3 +25,5 @@ export default class IRouter extends React.Component{
         )
     }
 }
+
+export default IRouter;
