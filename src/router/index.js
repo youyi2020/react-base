@@ -11,7 +11,8 @@ export default class IRouter extends React.Component{
                     <Route path='/'>
                         <Layout>
                             <Switch>
-                                <Route exact path="/home" component={HomePage}></Route>
+                                <Route exact path="/home" component={HomePage}/>
+                                <Redirect to="/home"/>
                             </Switch>
                         </Layout>
                     </Route>

@@ -5,8 +5,7 @@ class Layout extends Component {
   render() {
     return (
       <div className="layout">
-            <div>123</div>
-        
+        {this.props.children}
       </div>
     );
   }

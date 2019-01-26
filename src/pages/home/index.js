@@ -1,6 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-
+import './index.less'
 
 export default class Home extends React.Component{
     constructor(props){
@@ -10,7 +9,9 @@ export default class Home extends React.Component{
     render(){
         return (
             <div className="home">  
-                home
+                <div className="test">
+                    home
+                </div>
             </div>
         )
     }
