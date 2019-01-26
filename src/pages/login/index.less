@@ -1,0 +1,48 @@
+@import '../../assets/globalStyle/default.less';
+.login{
+    width: 420px;
+    padding: 40px 50px 10px 50px;
+    text-align: center;
+    margin: 200px auto 0;
+    box-shadow: 0 2px 8px 0 @color-box-shadow;
+    border: 1px solid @color-box-border;
+    .login-title{
+        font-size: 20px;
+        font-weight: 400;
+        color: @color-text-title;
+        margin-bottom: 35px;
+    }
+    .login-form {
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+        .ant-form-item{
+            .ant-input-affix-wrapper{
+                height: 40px;
+            }
+            .login-form-button{
+                height: 40px;
+            }
+            .login-form-forgot {
+                float: right;
+            }
+            .login-form-button {
+                margin-top: 4px;
+                width: 100%;
+            }
+            .ant-form-explain{
+                margin-top: 4px;
+                font-size: 12px;
+            }
+            .ant-input-clear-icon{
+                color: @color-text-disabled
+            }
+        }
+    }
+    .login-registe{
+        margin-top: 8px;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+    }
+}
