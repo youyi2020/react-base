@@ -1,5 +1,5 @@
 # vue-base 
-> vue configuration with webpack4 to quickly start your project
+> React configuration with webpack4 to quickly start your project
 
 ## Build Setup
 
