@@ -1,3 +1,4 @@
-.home .test {
+.home {
   color: blue;
+  display: flex;
 }
