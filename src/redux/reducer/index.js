@@ -3,15 +3,13 @@
  */
 import {type} from './../action'
 
-
 const initialState = {
-    userToken        :   '12312313'
+    userToken        :   null
 };
 
-// let initSession = window.sessionStorage.getItem(AUTH_SESSION) || JSON.stringify(initialState);
-// const initialStoreState = JSON.parse(initSession);
+const initialStoreState = JSON.parse(window.localStorage.getItem('user_token')) || initialState;
 
-export default (state = initialState,action)=> {
+export default (state = initialStoreState,action)=> {
     switch (action.type){
 
         case type.USERTOKEN:{
@@ -19,6 +17,7 @@ export default (state = initialState,action)=> {
                 ...state,
                 userToken:action.userToken
             };
+            window.localStorage.setItem('user_token',JSON.stringify(newState));
             return newState;
         }
 

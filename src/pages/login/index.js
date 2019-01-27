@@ -1,7 +1,12 @@
 import React from 'react'
 import {Form, Icon, Input, Button, Checkbox} from 'antd';
 import './index.less'
-import {regExp} from './../../util'
+import {regExp,stringToBase64,base64ToString} from './../../util'
+import {authLogin} from './../../api/index.js'
+import {message} from 'antd';
+import {connect} from 'react-redux'
+import {userToken} from "./../../redux/action";
+
 class Login extends React.Component{
     constructor(props){
         super(props);
@@ -11,7 +16,16 @@ class Login extends React.Component{
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
           if (!err) {
-            console.log('Received values of form: ', values);
+            authLogin(values).then(result => {
+                message.success('登录成功');
+                // const token = JSON.stringify(result);
+                // const tokenBase = stringToBase64(token)
+                // console.log(tokenBase);
+                this.props.dispatch(userToken(result));
+                this.props.history.push('/home');
+            })
+          }else{
+            console.error(err.message)
           }
         });
       }
@@ -23,18 +37,18 @@ class Login extends React.Component{
                 <p className="login-title">会话精灵后台管理系统</p>
                 <Form onSubmit={this.handleSubmit} className="login-form">
                     <Form.Item> 
-                        {getFieldDecorator('userName', {
+                        {getFieldDecorator('userAccount', {
                             rules: [ 
                                 { required: true, message: '手机号不能为空' },
-                                { pattern: regExp.isPhone, message: '请输入正确的手机号' },
-                                { max: 20, message: '我是有长度的' },
+                                { whitespace: false, message: '不允许使用空格' },
+                                { pattern: regExp.isPhone, message: '请输入正确的手机号' }
                             ],
                         })(
                             <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} allowClear={true} placeholder="请输入手机号" />
                         )}
                     </Form.Item>
                     <Form.Item>
-                        {getFieldDecorator('password', {
+                        {getFieldDecorator('userPassword', {
                             rules: [
                                 { required: true, message: '密码不能为空' },
                                 { whitespace: false, message: '不允许使用空格' },
@@ -71,4 +85,4 @@ class Login extends React.Component{
 
 const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(Login);
 
-export default WrappedNormalLoginForm;
+export default connect()(WrappedNormalLoginForm)

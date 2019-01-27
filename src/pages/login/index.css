@@ -2,9 +2,9 @@
   width: 420px;
   padding: 40px 50px 10px 50px;
   text-align: center;
-  margin: 200px auto 0;
-  box-shadow: 0 2px 8px 0 #F1F1FB;
+  margin: 150px auto 0;
   border: 1px solid #EFF7FF;
+  background: white;
 }
 .login .login-title {
   font-size: 20px;
