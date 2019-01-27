@@ -4,7 +4,7 @@ import PrivateRoute from './private.js'
 import Layout from './../layout/index.js'
 import HomePage from './../pages/home/index.js'
 import LoginPage from './../pages/login/index.js'
-
+import RegisterPage from './../pages/register/index.js'
 class IRouter extends React.Component{
     render(){
         return(
@@ -13,10 +13,10 @@ class IRouter extends React.Component{
                     <Route path='/'>
                         <Layout>
                             <Switch>
-                                {/* <Route exact path="/home" component={HomePage}/> */}
-                                <Route exact path="/login" component={LoginPage}/>
+                                <Route exact path="/login" component={LoginPage} />  
+                                <Route exact path="/register" component={RegisterPage} />
                                 <PrivateRoute path="/home" component={HomePage} />
-                                <Redirect to="/login"/>
+                                <Redirect to="/home" />
                             </Switch>
                         </Layout>
                     </Route>

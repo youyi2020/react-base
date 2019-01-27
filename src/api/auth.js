@@ -13,3 +13,16 @@ export const authLogin = (params)=> {
     });
   })
 };
+
+
+export const authRegister = (params)=> {
+  return new Promise((resolve, reject) => {
+    axios.post(`${baseUrl}/auth/register`,params).then(data => {
+      if(data.code == 200){
+        resolve(data.result);
+      }
+    }).catch(err => {
+      reject(err);
+    });
+  })
+};

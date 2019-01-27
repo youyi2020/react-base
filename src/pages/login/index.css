@@ -1,43 +1,50 @@
-.login {
+.auth-login {
+  width: 100%;
+  height: 100%;
+  background: white url('../../assets/images/bg.png') center center repeat-x;
+  background-size: cover;
+  overflow: hidden;
+}
+.auth-login .login {
+  margin: 150px auto 0;
   width: 420px;
   padding: 40px 50px 10px 50px;
   text-align: center;
-  margin: 150px auto 0;
   border: 1px solid #EFF7FF;
   background: white;
 }
-.login .login-title {
+.auth-login .login .login-title {
   font-size: 20px;
   font-weight: 400;
   color: #34404D;
   margin-bottom: 35px;
 }
-.login .login-form {
+.auth-login .login .login-form {
   display: inline-block;
   width: 100%;
   text-align: left;
 }
-.login .login-form .ant-form-item .ant-input-affix-wrapper {
+.auth-login .login .login-form .ant-form-item .ant-input-affix-wrapper {
   height: 40px;
 }
-.login .login-form .ant-form-item .login-form-button {
+.auth-login .login .login-form .ant-form-item .login-form-button {
   height: 40px;
 }
-.login .login-form .ant-form-item .login-form-forgot {
+.auth-login .login .login-form .ant-form-item .login-form-forgot {
   float: right;
 }
-.login .login-form .ant-form-item .login-form-button {
+.auth-login .login .login-form .ant-form-item .login-form-button {
   margin-top: 4px;
   width: 100%;
 }
-.login .login-form .ant-form-item .ant-form-explain {
+.auth-login .login .login-form .ant-form-item .ant-form-explain {
   margin-top: 4px;
   font-size: 12px;
 }
-.login .login-form .ant-form-item .ant-input-clear-icon {
+.auth-login .login .login-form .ant-form-item .ant-input-clear-icon {
   color: #C3C7CB;
 }
-.login .login-registe {
+.auth-login .login .login-registe {
   margin-top: 8px;
   display: inline-block;
   text-align: center;
